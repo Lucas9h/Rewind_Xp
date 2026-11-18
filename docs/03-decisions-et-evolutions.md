@@ -32,6 +32,13 @@ Objectif : empêcher les retours en arrière involontaires et expliquer *pourquo
 - **18 novembre — méthode de travail :** cloner / ouvrir le dépôt, importer **sans l'écraser** le prototype existant, ajouter un `AGENTS.md` et la documentation, faire auditer l'existant, puis seulement envisager une architecture plus modulaire.
 - **18 novembre — documentation :** décision de fournir à Codex le **brief original du professeur** et un **dossier de contexte complet**, afin qu'il comprenne les décisions passées et les plans futurs.
 
+## V1 — Socle de session
+
+**18 novembre 2026 — VALIDÉ.** Créer une V1 séparée du prototype historique.
+Commencer par le démarrage animé, le choix du profil et le bureau. Ajouter
+ensuite les applications une par une, puis le parcours narratif et les
+transitions. Prévoir les points de passage dès le socle de session.
+
 ## Décisions non encore verrouillées
 
 - Architecture React / Vite vs poursuite du HTML existant : **proposition**, pas migration actée.

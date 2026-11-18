@@ -1,0 +1,39 @@
+/* Google Earth 4 (2006) — local interactive architecture prototype */
+.xp-window[data-window="earth"] .xp-window-content{background:#e9e9e9;font:11px Tahoma,Arial,sans-serif}
+.ge-shell{display:flex;flex-direction:column;height:100%;min-height:0;background:#e9e9e9;color:#232323}
+.ge-menu{height:22px;min-height:22px;display:flex;align-items:center;padding:0 7px;gap:16px;background:linear-gradient(#f8f8f8,#e5e5e5);border-bottom:1px solid #c3c3c3}
+.ge-toolbar{height:34px;min-height:34px;display:flex;gap:3px;align-items:center;padding:3px 7px;border-bottom:1px solid #aaa;background:linear-gradient(#fff,#dbdfe3)}
+.ge-tool{height:25px;min-width:28px;border:1px solid #abb3bf;background:linear-gradient(#fff,#e2e7ef);border-radius:2px;color:#214d79;font-size:15px}
+.ge-toolbar .ge-tool:hover{background:linear-gradient(#fff,#c1defa);border-color:#6e96bb}.ge-toolbar-label{font-size:11px;color:#536579;margin-left:7px}
+.ge-workspace{display:flex;flex:1;min-height:0}.ge-sidebar{width:228px;flex:none;display:flex;flex-direction:column;background:#f7f7f7;border-right:1px solid #8f9bab;min-height:0}
+.ge-section-head{background:linear-gradient(#fefefe,#d4dde7);height:24px;flex:none;border-bottom:1px solid #9faabc;border-top:1px solid #fff;padding:4px 8px;font-weight:bold;color:#344b67}
+.ge-search-area{padding:8px 7px;border-bottom:1px solid #c8cfd8}.ge-search-row{display:flex;gap:3px}.ge-search-row input{width:100%;min-width:0;height:23px;border:1px solid #8b9cad;padding:3px;font-size:11px}.ge-search-row button{border:1px solid #93a2b7;background:linear-gradient(#fff,#d8e3ee);font-size:11px;padding:0 7px}
+.ge-search-area small{display:block;color:#788392;margin-top:6px;line-height:1.4}.ge-places{flex:1;min-height:0;overflow:auto;background:#fff;padding:6px 6px 8px}.ge-tree-heading{display:flex;gap:5px;align-items:center;font-weight:bold;color:#34475c;padding:4px}.ge-place{display:flex;align-items:center;gap:6px;padding:6px 5px 6px 18px;border:0;background:transparent;width:100%;text-align:left;font-size:11px;color:#1b4476}.ge-place:hover,.ge-place.active{background:#d4e8fc}.ge-pin{color:#e0a01a;text-shadow:0 1px #78510e;font-size:15px}.ge-layers{height:140px;flex:none;background:white;overflow:auto;padding:5px 9px;display:flex;flex-direction:column;gap:6px}.ge-layers label{display:flex;align-items:center;gap:6px;color:#43566b}.ge-layers input{accent-color:#316cc5}
+.ge-scene{position:relative;flex:1;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#18254b 0%,#071023 58%,#02040a 100%)}
+.ge-stars{position:absolute;inset:0;pointer-events:none;opacity:.45;background-image:radial-gradient(1px 1px at 8% 18%,#fff 90%,transparent),radial-gradient(1px 1px at 45% 8%,#fff 90%,transparent),radial-gradient(1px 1px at 75% 30%,#fff 90%,transparent),radial-gradient(1px 1px at 60% 83%,#fff 90%,transparent),radial-gradient(1px 1px at 14% 72%,#fff 90%,transparent),radial-gradient(1px 1px at 89% 92%,#fff 90%,transparent)}
+.ge-globe-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:none}.ge-globe-canvas:active{cursor:grabbing}
+.ge-compass{position:absolute;top:12px;right:12px;width:75px;height:75px;border:1px solid #9db7d6;border-radius:50%;display:grid;place-items:center;background:radial-gradient(#e9f1ffbd,#8fa7c85c);box-shadow:0 0 8px #010714bb;color:#133b6b;font-size:12px;pointer-events:none}
+.ge-compass:before{content:'N';position:absolute;top:2px;left:33px;color:#9b2828;font-weight:bold}.ge-compass:after{content:'✥';font-size:34px;color:#244872;text-shadow:0 1px white}
+.ge-navcontrols{position:absolute;right:17px;top:100px;display:flex;flex-direction:column;gap:5px}.ge-navcontrols button{border:1px solid #7b97b8;color:#163760;background:linear-gradient(#fff,#c5d4e4);width:27px;height:25px;font-weight:bold}
+.ge-placemark{position:absolute;bottom:14px;left:14px;right:auto;width:min(640px,calc(100% - 90px));background:rgba(245,249,255,.975);border:1px solid #96acc8;border-radius:5px;padding:12px 14px 12px;box-shadow:0 5px 18px #0008;min-height:165px;color:#172e48}
+.ge-placemark h3{font-size:14px;margin:0 26px 4px 0;color:#174c89}.ge-placemark .ge-meta{font-size:10px;color:#596c81;margin:0 0 8px}.ge-placemark p{font-size:12px;line-height:1.55;margin:0 0 8px}.ge-placemark button{position:absolute;right:7px;top:6px;background:none;border:0;font-size:18px;color:#64748b}
+.ge-placemark .ge-source{color:#496b92;font-size:10px}.ge-placemark-layout{display:grid;grid-template-columns:225px 1fr;gap:14px;align-items:start}.ge-placemark-photo{height:138px;border:1px solid #93a8c0;border-radius:3px;background:#d5dce6 center/cover no-repeat;box-shadow:inset 0 0 0 1px #ffffffb0}.ge-placemark-caption{font-size:10px;color:#5f7288;margin-top:5px;line-height:1.35}.ge-placemark-body{min-width:0}.ge-placemark-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}.ge-placemark-tags span{background:#edf4fb;border:1px solid #c3d5e7;color:#34577c;border-radius:999px;padding:2px 8px;font-size:10px}.ge-placemark-extra{font-size:11px;color:#324c69;line-height:1.45}.ge-marker-line{position:absolute;inset:auto auto auto auto}.ge-photo-note{font-size:10px;color:#5f7288}.ge-intro{position:absolute;top:12px;left:12px;background:#eaf4ffec;color:#193d65;border:1px solid #9fbcda;padding:8px 10px;max-width:270px;font-size:11px;line-height:1.5;pointer-events:none}
+.ge-status{height:22px;flex:none;display:flex;justify-content:space-between;align-items:center;gap:9px;background:#e9e9e9;border-top:1px solid #aab1b8;padding:0 7px;font-size:10px;color:#3a4554}
+.ge-status span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:760px){.ge-sidebar{width:174px}.ge-placemark{width:min(92vw,420px)}.ge-placemark-layout{grid-template-columns:1fr}.ge-placemark-photo{height:110px}.ge-intro{display:none}}
+
+/* Vintage XP icons for Google Earth */
+.ge-vintage-icon{display:inline-block;vertical-align:middle;image-rendering:auto;flex:none}
+.ge-vintage-icon.ge-tool-icon{width:16px;height:16px}
+.ge-vintage-icon.ge-inline-icon{width:16px;height:16px;margin-right:5px}
+.ge-vintage-icon.ge-tree-icon{width:15px;height:15px;margin-right:4px}
+.ge-vintage-icon.ge-place-icon{width:14px;height:14px;margin-right:6px}
+.ge-vintage-icon.ge-meta-icon{width:14px;height:14px;margin-right:4px}
+.ge-vintage-icon.ge-intro-icon{width:17px;height:17px;margin-right:6px}
+.ge-tool{display:inline-flex;align-items:center;justify-content:center}
+.ge-tree-heading{display:flex;align-items:center;gap:3px}
+.ge-place{display:flex;align-items:center}
+.ge-pin{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;background:none;color:inherit;margin-right:0;text-shadow:none;font-size:inherit}
+.ge-intro{display:flex;align-items:flex-start;gap:6px}
+.ge-intro-text{display:block}
+.ge-meta-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap}

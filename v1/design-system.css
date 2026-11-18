@@ -1,0 +1,12 @@
+:root {
+  --font-system: Tahoma, Verdana, sans-serif;
+  --font-console: VT323, "Lucida Console", monospace;
+  --color-screen-black: #000;
+  --color-system-text: #111;
+  --color-system-text-light: #f5f8ff;
+  --color-focus-light: #142a70;
+  --color-focus-dark: #ffc65c;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }

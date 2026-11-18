@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rewind XP</title>
+  <link rel="icon" href="/assets/flag.png">
+  <link rel="stylesheet" href="/design-system.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./session.mjs"></script>
+</head>
+<body>
+  <main>
+    <section id="boot" class="boot" aria-labelledby="boot-title">
+      <div class="boot-center">
+        <h1 id="boot-title" class="windows-logo boot-logo" tabindex="-1">
+          <img src="/assets/profile-logo.png" width="525" height="310" alt="Windows XP">
+          <img class="windows-logo-lettering" src="/assets/profile-logo.png" width="525" height="310" alt="">
+        </h1>
+        <p class="visually-hidden" role="status">Démarrage de la session</p>
+        <button id="skip-boot" class="boot-track" type="button" aria-label="Passer le démarrage">
+          <span class="boot-blocks" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </section>
+
+    <section id="profiles" class="profiles" aria-labelledby="profile-title" hidden>
+      <div class="profile-layout">
+        <div class="brand">
+          <span class="windows-logo profile-brand-mark">
+            <img src="/assets/profile-logo.png" width="525" height="310" alt="Windows XP">
+            <img class="windows-logo-lettering" src="/assets/profile-logo.png" width="525" height="310" alt="">
+          </span>
+          <h1 id="profile-title" tabindex="-1">Pour commencer, saisis ton nom</h1>
+        </div>
+        <div class="profile-list" aria-labelledby="profile-title">
+          <form id="profile-form">
+            <span class="profile-avatar"><img src="/assets/user.png" alt=""></span>
+            <div class="profile-fields">
+              <label for="profile-name">Ton nom</label>
+              <div class="profile-entry">
+                <input id="profile-name" name="nom" type="text" required maxlength="26" autocomplete="off">
+                <button class="profile-submit" type="submit" aria-label="Se connecter" title="Se connecter">→</button>
+              </div>
+            </div>
+          </form>
+          <button id="guest-session" type="button">Ouvrir une session invité</button>
+        </div>
+      </div>
+      <footer class="profile-footer">
+        <button id="power-off" type="button">
+          <img src="/desktop/icons/Power%20off%20Button.png" width="32" height="32" alt="">
+          Éteindre la session
+        </button>
+        <p>Rewind XP · Culture graphique<br>Projet pédagogique · ECV Bordeaux</p>
+      </footer>
+    </section>
+
+    <section id="powered-off" class="powered-off" aria-labelledby="power-title" hidden>
+      <div class="power-console">
+        <h1 id="power-title" tabindex="-1">Session éteinte</h1>
+        <button id="power-on" type="button">Redémarrer</button>
+      </div>
+    </section>
+
+    <section id="desktop" class="desktop" aria-labelledby="desktop-title" hidden>
+      <h1 id="desktop-title" class="visually-hidden" tabindex="-1">Bureau Rewind XP</h1>
+      <iframe id="desktop-frame" title="Bureau Rewind XP"></iframe>
+    </section>
+  </main>
+  <div id="crt-overlay" aria-hidden="true"></div>
+</body>
+</html>

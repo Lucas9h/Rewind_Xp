@@ -1,0 +1,418 @@
+/* Internet Explorer 7 + portail multi-sites, avec Wikipédia / MonoBook. */
+.xp-window[data-window="internet"] .xp-window-content{background:#ece9d8}
+.ie-menu{height:24px;min-height:24px;display:flex;align-items:center;gap:0;padding:0 4px;background:#ece9d8;border-bottom:1px solid #d6d2c2}
+.ie-menu button{color:#111;border:1px solid transparent;background:transparent;padding:3px 8px;white-space:nowrap;font-size:11px}
+.ie-menu button:hover{border-color:#96958e;background:#f8f7f0}
+.ie-toolbar{height:43px;min-height:43px;display:flex;align-items:center;padding:2px 4px;gap:2px;border-bottom:1px solid #bbb7a8;background:#ece9d8;overflow:hidden;white-space:nowrap}
+.ie-grip{height:27px;width:5px;flex:none;border-left:2px groove #fdfbf2;border-right:1px solid #a6a69f;margin-right:1px}
+.ie-toolbar button{display:flex;gap:3px;align-items:center;justify-content:center;flex:none;border:1px solid transparent;background:transparent;height:36px;padding:2px 5px;font-size:11px;color:#252525}
+.ie-toolbar button:not(:disabled):hover{background:#faf9f3;border:1px solid #b0afaa;box-shadow:inset 1px 1px #fff}
+.ie-toolbar button:disabled{opacity:.4}
+.ie-toolbar button img{width:25px;height:25px;object-fit:contain;filter:none}
+.ie-toolbar button .ie-navball{display:grid;place-items:center;color:#fff;text-shadow:0 1px #346627;width:26px;height:26px;border-radius:50%;border:1px solid #749a69;background:linear-gradient(#bbec8a 0%,#68b95e 45%,#36853a 100%);box-shadow:inset 1px 1px 1px #f5fff5,1px 1px 1px #aaa;font-size:16px;line-height:22px}
+.ie-toolbar button[data-ie-action="forward"] .ie-navball{background:linear-gradient(#b4e4a9,#58a955,#398544)}
+.ie-toolbar button .ie-navball.ie-stop{border-radius:3px;background:linear-gradient(#fc9d82,#df3b24);border-color:#b64432;font-weight:bold;font-size:18px}
+.ie-toolbar button .ie-navball.ie-refresh{background:linear-gradient(#a5dafa,#4a97d4);border-color:#397cba}
+.ie-toolbar button .ie-navball.ie-home{background:linear-gradient(#dfecfc,#7ba2c7);border-color:#718ca8}
+.ie-toolbar .ie-separator{height:30px;flex:none;margin:0 4px;border-left:1px solid #aca99f;border-right:1px solid #fff}
+.ie-addressbar{height:29px;min-height:29px;display:flex;gap:6px;align-items:center;padding:2px 6px;background:#ece9d8;border-bottom:1px solid #b6b2a3}
+.ie-addressbar label{color:#666;white-space:nowrap}
+.ie-address-field{height:22px;flex:1;min-width:0;display:flex;align-items:center;gap:4px;padding-left:3px;border:1px solid #7f9db9;background:white;box-shadow:inset 1px 1px 1px #ddd}
+.ie-address-field img{width:16px;height:16px;flex:none}
+.ie-address-field input{width:100%;flex:1;min-width:0;border:0;background:transparent;outline:none;height:19px;color:#111;font-size:11px;padding:1px 1px}
+.ie-address-field input:focus{outline:none}
+.ie-address-go{height:22px;min-width:47px;border:1px solid transparent;background:transparent;display:flex;align-items:center;gap:5px;padding:1px 3px}
+.ie-address-go:hover{border-color:#a6aa99;background:#f7f6ef}
+.ie-address-go .ie-go-arrow{display:grid;place-items:center;width:20px;height:20px;background:linear-gradient(#a6e79c,#3baf42);color:white;font-weight:bold;font-size:15px;border:1px solid #6aa760;border-radius:50%;text-shadow:1px 1px #28742b}
+.ie-linksbar{height:25px;min-height:25px;display:flex;gap:10px;align-items:center;padding:1px 8px;background:#ece9d8;border-bottom:1px solid #c6c1b1;overflow:hidden;white-space:nowrap}
+.ie-linksbar span{color:#555}.ie-linksbar button{padding:1px 3px;border:1px solid transparent;background:transparent;color:#273d5c}.ie-linksbar button:hover{border:1px solid #a0a6ae;background:#f9f9f5}
+.ie-layout{flex:1;min-height:0;display:flex;overflow:hidden;background:white}
+.ie-panel{width:210px;min-width:175px;max-width:40%;border-right:1px solid #b7b3a8;background:#f6f6f3;overflow:auto;flex:none;font-size:11px}
+.ie-panel[hidden]{display:none}
+.ie-panel-head{background:#e4e4de;border-bottom:1px solid #aba89d;height:32px;display:flex;align-items:center;justify-content:space-between;padding:5px 8px;font-weight:bold;color:#444;font-size:12px}
+.ie-panel-head button{background:transparent;border:1px solid #96958f;color:#555;width:20px;height:20px;border-radius:2px}
+.ie-panel-body{padding:9px}.ie-panel-item{display:flex;align-items:center;gap:7px;min-height:27px;padding:5px 4px;background:transparent;border:0;width:100%;text-align:left;color:#143a83;line-height:1.3}
+.ie-panel-item:hover{background:#3069bc;color:white}.ie-panel-item img{width:18px;height:18px;object-fit:contain}
+.ie-panel-body label{display:block;margin:0 0 5px}.ie-panel-body input{width:100%;height:23px;border:1px solid #7f9db9;padding:3px}.ie-panel-body .xp-btn{margin-top:6px}
+.ie-layout .browser-content{flex:1;min-width:0;min-height:0;overflow:auto;background:#f6f6f6;font-family:Arial,Helvetica,sans-serif;user-select:text}
+.ie-statusbar{height:23px;min-height:23px;background:#ece9d8;border-top:1px solid #c4c0ae;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 7px;color:#444;font-size:11px}
+.ie-statusbar .ie-statustext{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ie-statusbar .ie-security{margin-left:auto;border-left:1px solid #bebaaa;padding-left:8px;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.ie-statusbar .ie-security img{width:15px;height:15px}
+
+/* Internet Explorer 7 additions */
+.ie7-toolbar{height:40px;min-height:40px}
+.ie7-tabsbar{height:28px;min-height:28px;display:flex;align-items:flex-end;gap:4px;padding:0 5px;background:linear-gradient(#f7f6ef,#e2ddd0);border-bottom:1px solid #b8b4a8}
+.ie7-tabs{flex:1;min-width:0;display:flex;align-items:flex-end;gap:2px;overflow:hidden}
+.ie7-tab{position:relative;display:flex;align-items:center;gap:6px;min-width:90px;max-width:220px;height:24px;padding:0 9px;border:1px solid #96a9c5;border-bottom:0;border-radius:5px 5px 0 0;background:linear-gradient(#fdfefe,#dfe8f6);color:#1a3157;box-shadow:inset 0 1px #fff}
+.ie7-tab.active{height:26px;background:linear-gradient(#ffffff,#f3f7fd);color:#000;z-index:1}
+.ie7-tab-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
+.ie7-tab-icon{width:12px;height:12px;border-radius:50%;background:linear-gradient(#6cc5ff,#2e7cd8);flex:none}
+.ie7-tab-close{margin-left:auto;font-size:13px;color:#5e6f8c;line-height:1}
+.ie7-newtab{height:22px;min-width:24px;border:1px solid #97a9c3;border-bottom:0;border-radius:5px 5px 0 0;background:linear-gradient(#fefefe,#dde7f4);color:#2a4674;font:bold 15px/1 Tahoma}
+.ie-newtab-mini{display:grid;place-items:center;width:24px;height:24px;border-radius:4px;background:linear-gradient(#fdfefe,#d5e3f5);border:1px solid #9aacc5;color:#2f5f9d;font:bold 17px/1 Tahoma}
+.ie7-homepage{padding:28px 34px 34px;background:linear-gradient(#ffffff,#f5f9ff);min-height:100%}
+.ie7-homepage h1{font-size:23px;color:#0d4b9f;margin:22px 0 8px}
+.ie7-home-intro p{font-size:13px;line-height:1.55;max-width:820px}
+.ie7-site-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.ie7-site-card{border:1px solid #b9cbe2;border-radius:8px;background:#fff;box-shadow:0 2px 6px rgba(42,88,146,.08);padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;min-height:190px}
+.ie7-site-card h2{margin:0;font-size:21px;color:#134b93}.ie7-site-card p{margin:0;font-size:12px;line-height:1.55;color:#333}
+.ie7-site-card.wiki{background:linear-gradient(#ffffff,#f8fbff)}.ie7-site-card.da{background:linear-gradient(#fbfffa,#f2f8ec)}.ie7-site-card.ebay{background:linear-gradient(#fffefb,#fff6ea)}
+.ie7-site-actions{display:flex;gap:8px;margin-top:auto}.ie7-home-tip{margin-top:18px;padding:10px 12px;background:#eef5ff;border:1px solid #bfd1ee;font-size:11px;color:#32537f}
+.da-site{background:#dfead6;min-height:100%}.da-top{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:linear-gradient(#31463a,#22322a);color:#dce7d9}.da-top nav{display:flex;gap:14px}.da-top nav a{color:#dbe9d6;text-decoration:none;font-size:11px}.da-logo{font:700 28px/1 Tahoma,Arial,sans-serif;letter-spacing:-1px;color:#d6f09b}.da-logo.small{font-size:22px}
+.da-body{display:flex;min-height:calc(100% - 44px)}.da-side{width:195px;flex:none;background:#e7f0df;border-right:1px solid #b1c3a8;padding:14px 12px;font-size:11px}.da-side h3{margin:0 0 10px;color:#486d47;font-size:12px}.da-side a{display:block;color:#214f3a;text-decoration:none;padding:3px 0}.da-side-box{margin-top:16px;padding:10px;border:1px solid #c1d3b7;background:#f7fbf3;color:#466}
+.da-main{flex:1;min-width:0;padding:18px 20px;background:#f8fbf5}.da-hero{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:start}.da-hero-note{background:#fff;border:1px solid #c8d7bc;padding:12px;font-size:11px;line-height:1.55}.da-section-title{margin:20px 0 10px;font-size:18px;color:#335b3a;font-weight:bold}.da-card-grid,.da-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.da-card,.da-thumb{background:#fff;border:1px solid #cad8c2;padding:12px}.da-card h3,.da-thumb h4{margin:0 0 6px}.da-card p,.da-thumb p{font-size:11px;line-height:1.55;color:#333}.da-art{height:95px;background:linear-gradient(135deg,#8db8ff,#efb3ff);margin-bottom:10px;border:1px solid #c3c3c3}.da-art.photo{background:linear-gradient(135deg,#858585,#ececec)}.da-art.green{background:linear-gradient(135deg,#9dd17d,#e8f5da)}.da-article h1{margin:0 0 6px;color:#355f42}.da-meta{color:#6b7e70;font-size:11px}.da-comments,.da-badges{margin-top:16px;padding:12px;border:1px solid #ccd9c4;background:#fff}.da-badges{display:flex;flex-wrap:wrap;gap:8px}.da-badges span{background:#edf6e6;border:1px solid #c7d8bb;padding:4px 8px;font-size:11px}
+.ebay-site{background:#fff;min-height:100%}.ebay-top{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #d2d8e6;background:linear-gradient(#fefefe,#edf2fb)}.ebay-top nav{display:flex;gap:14px}.ebay-top nav a{text-decoration:none;color:#1a4a93;font-size:11px}.ebay-logo{font:bold 34px/1 Arial,sans-serif;letter-spacing:-2px}.ebay-logo.mini{font-size:28px}.ebay-logo .e1{color:#e53238}.ebay-logo .e2{color:#0064d2}.ebay-logo .e3{color:#f5af02}.ebay-logo .e4{color:#86b817}
+.ebay-main{padding:18px 20px;background:#fff}.ebay-hero p{font-size:13px;max-width:760px;line-height:1.55}.ebay-searchline{display:flex;gap:8px;margin:16px 0}.ebay-searchline input{flex:1;height:30px;border:1px solid #7f9db9;padding:0 10px}.ebay-searchline button{padding:0 14px;border:1px solid #6c87b3;background:linear-gradient(#f8fbff,#dce7f6)}
+.ebay-listings{display:grid;gap:12px}.ebay-item,.ebay-detail{border:1px solid #d9e1ef;background:#fbfdff;padding:14px}.ebay-item h3,.ebay-detail h1{margin:0 0 6px}.ebay-item p,.ebay-detail p,.ebay-detail li{font-size:12px;line-height:1.6}.ebay-meta{color:#5e718b;font-size:11px}
+@media(max-width:980px){.ie7-site-grid{grid-template-columns:1fr}.da-hero{grid-template-columns:1fr}.da-body{flex-direction:column}.da-side{width:auto}.ie7-tab{max-width:160px}}
+
+
+/* IE7 Windows XP 2006 chrome — compact navigation and tabs like reference image */
+.ie7-navigation>button>span:last-child{display:none}
+.ie7-navigation .ie7-go{font-family:Tahoma,Arial,sans-serif}
+.xp-window[data-window="internet"] .xp-window-content{background:#e4ebf6}
+.xp-window[data-window="internet"] .xp-titlebar{height:27px;min-height:27px}
+.ie7-chrome{flex:none;color:#273b5c;font:11px Tahoma,Arial,sans-serif;background:#e6edf7;border-bottom:1px solid #8faacb}
+
+.ie7-navigation{height:32px;display:flex;align-items:center;gap:4px;padding:3px 6px 2px;background:linear-gradient(#edf4fc 0%,#d8e5f3 50%,#c6d7e9 100%);border-bottom:1px solid #98afc8;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.ie7-navigation>button{flex:none;display:grid;place-items:center;height:24px;width:24px;border:1px solid transparent;border-radius:4px;background:transparent;padding:0}
+.ie7-navigation>button:not([data-ie-action="back"]):not([data-ie-action="forward"]):hover{background:linear-gradient(#fff,#e8f1fa);border-color:#9db3ca}
+.ie7-navigation .ie-address-field{height:24px;border:1px solid #7e9cbc;background:linear-gradient(#ffffff,#fbfdff);box-shadow:inset 1px 1px 0 #f5faff;flex:1;min-width:120px;display:flex;align-items:center;padding:0 0 0 1px;border-radius:2px;overflow:hidden}
+.ie7-address-brand{width:21px;height:100%;display:grid;place-items:center;background:linear-gradient(#fafafa,#e5e5e5);border-right:1px solid #c4cfdd;color:#000;font:normal 20px/1 Georgia,serif}
+.ie7-navigation .ie-address-field input{flex:1;min-width:0;height:20px;border:0;outline:0;padding:0 4px;font:12px Tahoma,Arial,sans-serif;background:transparent;color:#1a1a1a}
+.ie7-address-drop{height:100%;width:22px;border:0;border-left:1px solid #cbd6e2;background:linear-gradient(#f7fbff,#dfeaf5);color:#2c4e71;font:11px Tahoma}
+.ie7-navigation .ie7-go{width:24px;height:24px;border:1px solid #d29c4c;border-radius:2px;background:linear-gradient(#ffd693,#f3ae4d 46%,#e58c1e 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.ie7-go-icon{color:#fff;font:bold 13px/1 Arial;text-shadow:0 1px 0 rgba(112,61,0,.6)}
+.ie7-navigation .ie7-mini-icon{position:relative;display:block;width:14px;height:14px}
+.ie7-refresh-icon::before,.ie7-refresh-icon::after{content:"";position:absolute}
+.ie7-refresh-icon::before{inset:1px;border:2px solid #2f7bc6;border-right-color:transparent;border-radius:50%}
+.ie7-refresh-icon::after{right:-1px;top:1px;border:4px solid transparent;border-left-color:#2f7bc6;transform:rotate(18deg)}
+.ie7-stop-icon::before,.ie7-stop-icon::after{content:"";position:absolute;left:6px;top:1px;width:2px;height:12px;background:#cf453f;border-radius:1px}
+.ie7-stop-icon::before{transform:rotate(45deg)}
+.ie7-stop-icon::after{transform:rotate(-45deg)}
+.ie7-search{height:24px;width:180px;max-width:28%;display:flex;align-items:center;border:1px solid #93a9c1;background:linear-gradient(#ffffff,#f7f9fc);margin-left:4px;border-radius:2px;overflow:hidden;box-shadow:inset 1px 1px 0 #f4f8fb}
+.ie7-search input{width:100%;min-width:0;border:0;outline:0;padding:2px 6px;font:italic 12px Georgia,serif;color:#777;background:transparent}
+.ie7-search button{display:flex;align-items:center;justify-content:center;gap:1px;border:0;border-left:1px solid #d3dbe5;height:100%;width:28px;background:linear-gradient(#ffc564,#f0a53c 62%,#db8718);padding:0}
+.ie7-search-mag{position:relative;display:block;width:10px;height:10px;border:2px solid #fff;border-radius:50%;box-sizing:border-box}
+.ie7-search-mag::after{content:"";position:absolute;width:6px;height:2px;background:#fff;right:-5px;bottom:-1px;transform:rotate(45deg);border-radius:2px}
+.ie7-search-drop{font:10px Tahoma;color:#fff;line-height:1;align-self:flex-end;margin-bottom:4px}
+.ie7-commandbar{height:27px;display:flex;align-items:center;gap:3px;padding:1px 6px;background:linear-gradient(#fafbfd,#eef2f7);border-bottom:1px solid #b7c5d4;white-space:nowrap;overflow:hidden}
+.ie7-commandbar button{border:1px solid transparent;background:transparent;padding:0 6px;font:11px Tahoma,Arial,sans-serif;color:#31485f;height:22px;display:flex;align-items:center;gap:4px;border-radius:2px}
+.ie7-commandbar button:hover{border-color:#aabacc;background:linear-gradient(#ffffff,#edf3fa)}
+.ie7-cmd-icon{width:22px;min-width:22px;justify-content:center;padding:0!important}
+.ie7-fav-star span{color:#e0ae2a;font-size:16px;text-shadow:0 1px 0 #fff}
+.ie7-fav-add span{color:#56b348;font-size:15px;text-shadow:0 1px 0 #fff}
+.ie7-command-separator{border-left:1px solid #c5d0dd;border-right:1px solid #fff;height:18px;margin:0 3px}
+.ie7-command-spacer{flex:1}
+.ie7-home-glyph,.ie7-feed-glyph,.ie7-print-glyph,.ie7-page-glyph,.ie7-tools-glyph{position:relative;display:block;flex:none}
+.ie7-home-glyph{width:13px;height:12px}
+.ie7-home-glyph::before{content:"";position:absolute;left:1px;right:1px;bottom:0;height:7px;background:#7d9fc8;border:1px solid #4f7098;border-top:0}
+.ie7-home-glyph::after{content:"";position:absolute;left:0;top:-1px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #7d9fc8}
+.ie7-feed-glyph{width:13px;height:13px;border-radius:3px;background:#f5a32d}
+.ie7-feed-glyph::before,.ie7-feed-glyph::after{content:"";position:absolute;border:2px solid transparent;border-top-color:#fff;border-right-color:#fff;border-radius:0 100% 0 0}
+.ie7-feed-glyph::before{width:6px;height:6px;right:1px;bottom:1px}
+.ie7-feed-glyph::after{width:10px;height:10px;right:1px;bottom:1px}
+.ie7-feed-btn .ie7-feed-glyph{transform:rotate(180deg)}
+.ie7-print-glyph{width:13px;height:10px;background:#cfd7e3;border:1px solid #6f8094;border-radius:1px}
+.ie7-print-glyph::before{content:"";position:absolute;left:1px;right:1px;top:-5px;height:5px;background:#fff;border:1px solid #8ea0b5}
+.ie7-print-glyph::after{content:"";position:absolute;left:2px;right:2px;bottom:-4px;height:4px;background:#fff;border:1px solid #8ea0b5}
+.ie7-menu-btn i{font-style:normal;color:#5c7287;font-size:10px;margin-left:1px}
+.ie7-page-glyph{width:11px;height:13px;background:linear-gradient(#fff,#edf1f6);border:1px solid #8ea0b5;border-radius:1px}
+.ie7-page-glyph::after{content:"";position:absolute;right:-1px;top:-1px;border-left:5px solid transparent;border-bottom:5px solid #dbe5f1}
+.ie7-tools-glyph{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,#b9c9d9 10%,#7e93aa 58%,#5d7086 100%)}
+.ie7-help-glyph{display:grid;place-items:center;width:15px;height:15px;border-radius:50%;background:linear-gradient(#7bb2ea,#2f76c0);color:#fff;font:bold 12px/1 Arial;border:1px solid #4b7fb6;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+
+.ie7-tabsbar{height:27px;min-height:27px;padding:2px 4px 0;background:linear-gradient(#d5e4f6,#eef3fa);border-bottom:1px solid #91add0;gap:2px}
+.ie7-tabs{gap:2px}
+.ie7-tab{height:24px;max-width:173px;min-width:86px;padding:0 8px;border:1px solid #a8bcd8;border-bottom:0;border-radius:4px 4px 0 0;background:linear-gradient(#f9fcff,#d5e3f6);box-shadow:inset 0 1px #fff;color:#2a486d}
+.ie7-tab.active{height:25px;background:linear-gradient(#fff,#f3f8ff);border-color:#8baace;color:#183c65}
+.ie7-tab-icon{width:13px;height:13px;background:linear-gradient(135deg,#b7e8ff,#2086d4);border:1px solid #5699cb}
+.ie7-tab-label{font-size:10px}
+.ie7-newtab{height:20px;min-width:23px;background:linear-gradient(#fff,#d4e6f9);border:1px solid #a9bdd9;border-bottom:0;color:#3d76a5;font-size:14px}
+.ie-layout .browser-content{background:#fff}
+/* Bespoke Culture Graphique 2000 portal inside the historically-styled IE7 window */
+.cg-portal{min-height:100%;background:#f7f9fc;color:#1c2b46;font:12px Arial,sans-serif;overflow:hidden}
+.cg-masthead{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 28px;background:#f9fcff;border-bottom:1px solid #d2dce9}
+.cg-brand{display:flex;align-items:center;gap:10px;color:#24476e;font:700 22px/1.1 Arial,sans-serif;letter-spacing:-1.15px}
+.cg-brand b{color:#1166b8}
+.cg-brand small{display:block;margin-top:5px;font:700 9px/1 Arial,sans-serif;letter-spacing:2px;color:#7592b2}
+.cg-brand-star{display:grid;place-items:center;background:#116ac2;color:white;border-radius:6px;font-size:23px;width:38px;height:38px;box-shadow:0 3px 0 #0a4c8c}
+.cg-masthead-right{text-align:right;font:9px/1.6 Arial,sans-serif;color:#8b9db4;letter-spacing:1px}.cg-masthead-right strong{color:#416e9b}
+.cg-hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:245px;background:#e5edf7}
+.cg-hero-image{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:27px;background:radial-gradient(ellipse at 28% 18%,#7ccdf7 0%,transparent 48%),linear-gradient(140deg,#0066ba 0%,#1b7acc 44%,#102e68 100%);color:white}
+.cg-hero-image:before{content:"";position:absolute;width:85%;height:125%;right:-13%;bottom:-58%;border:40px solid rgba(255,255,255,.13);border-radius:50%;transform:rotate(-28deg)}
+.cg-hero-image:after{content:"";position:absolute;width:60%;height:80%;left:-22%;top:-52%;border:32px solid rgba(255,255,255,.16);border-radius:50%}
+.cg-hero-sheen{position:absolute;inset:0;background:linear-gradient(115deg,transparent 52%,rgba(255,255,255,.12) 52.5%,transparent 66%)}
+.cg-hero-image>span,.cg-hero-image>small{position:relative;z-index:1}
+.cg-hero-image>span{font:700 clamp(43px,6.5vw,86px)/.9 Arial,sans-serif;letter-spacing:-6px;text-shadow:0 3px 14px #103b6a77}
+.cg-hero-image>span i{font-style:normal;color:#73d0ff}
+.cg-hero-image>small{margin-top:11px;font:700 10px Arial;letter-spacing:3px}
+.cg-hero-side{padding:27px 30px;background:linear-gradient(125deg,#fff,#eff5ff)}
+.cg-small-label{font:700 10px Arial;letter-spacing:2.2px;color:#2773b4}
+.cg-hero-side h1{margin:13px 0 9px;font:700 clamp(28px,3vw,43px)/.95 Arial,sans-serif;letter-spacing:-1.8px;color:#164f91}
+.cg-hero-side p{font-size:12px;line-height:1.65;max-width:330px;color:#556d88}
+.cg-hero-foot{display:flex;justify-content:space-between;align-items:center;margin-top:15px;padding-top:10px;border-top:1px solid #cbdbed;color:#367bb8;font:700 9px Arial;letter-spacing:1.3px}
+.cg-hero-foot span{font-size:20px}
+.cg-favorites-heading{display:flex;align-items:center;justify-content:space-between;padding:23px 28px 12px}
+.cg-favorites-heading div{display:flex;gap:12px;align-items:baseline}
+.cg-favorites-heading div>span{font:700 14px Arial;color:#1c4f89;letter-spacing:1.3px}
+.cg-favorites-heading small{color:#8698aa;font-size:9px;letter-spacing:1px}
+.cg-favorites-decor{color:#b7cde9;font-size:15px;letter-spacing:4px}
+.cg-bookmarks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:0 28px 24px}
+.cg-bookmark{display:flex;flex-direction:column;min-width:0;min-height:213px;background:white;border:1px solid #c7d7e8;box-shadow:0 3px 9px #1f4d7c14}
+.cg-bookmark-top{height:54px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8ef;background:#f7fafd}
+.cg-bookmark-index{font:bold 10px Arial;color:#92abc7}.cg-mark{font:bold 30px Georgia;color:#647581;line-height:1}
+.cg-deviantart{font:bold 27px Arial;color:#3c6b47;letter-spacing:-2px}.cg-ebay{font:bold 26px Arial;letter-spacing:-3px}.cg-ebay i{font-style:normal}.cg-ebay i:nth-child(1){color:#e53238}.cg-ebay i:nth-child(2){color:#0064d2}.cg-ebay i:nth-child(3){color:#f5af02}.cg-ebay i:nth-child(4){color:#86b817}
+.cg-bookmark h2{padding:12px 13px 0;margin:0;font:bold 18px Arial;color:#1d5288}
+.cg-bookmark p{padding:0 13px;margin:6px 0 13px;font:11px/1.5 Arial;color:#566c83;flex:1}
+.cg-bookmark-category{padding:0 13px 12px;font:bold 9px Arial;letter-spacing:1px;color:#8da0b4}
+.cg-bookmark-actions{display:flex;gap:1px;background:#d6e3f1;border-top:1px solid #d6e3f1}
+.cg-bookmark-actions button{height:30px;border:0;background:linear-gradient(#f8fbff,#e8f1fc);color:#1b5b9b;font:bold 10px Arial;cursor:pointer}
+.cg-bookmark-actions button:first-child{display:flex;align-items:center;justify-content:space-between;flex:1;padding:0 12px}.cg-bookmark-actions button:last-child{width:32px;font-size:18px}
+.cg-bookmark-actions button:hover{background:#d2e8ff}
+.cg-footer{display:flex;gap:12px;justify-content:space-between;padding:13px 28px;border-top:1px solid #dbe4ef;color:#8399ad;font:9px Arial;letter-spacing:1px}
+@media(max-width:830px){.cg-bookmarks{grid-template-columns:1fr}.cg-hero{grid-template-columns:1fr}.cg-hero-image{min-height:190px}.cg-masthead-right{display:none}.ie7-search{max-width:16%}.ie7-commandbar [data-open-site]{display:none}}
+
+/* Historic MonoBook layout */
+.wiki-monobook{--wiki-link:#002bb8;display:flex;min-height:100%;background:#f6f6f6;color:#000;font:12px/1.55 Arial,Helvetica,sans-serif;position:relative}
+.wiki-monobook a{color:var(--wiki-link);text-decoration:none;cursor:pointer}
+.wiki-monobook a:hover{text-decoration:underline}
+.wiki-monobook a:visited{color:#5a3696}
+.wiki-sidebar{width:154px;flex:none;padding:0 7px 15px 5px;align-self:stretch;overflow:visible}
+.wiki-brand{display:flex;flex-direction:column;align-items:center;gap:0;min-height:157px;padding:3px 0 4px;text-align:center;color:#000!important}
+.wiki-emblem{height:98px;width:115px;display:grid;place-items:center;overflow:visible}
+.wiki-ball{width:88px;height:88px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff 0%,#e6e6e6 30%,#b8b8b8 67%,#737373 96%);box-shadow:inset -6px -4px 11px #5558,inset 2px 1px 2px #fff,3px 3px 7px #9996;transform:rotate(-14deg);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 15px;position:relative;filter:grayscale(1)}
+.wiki-ball:before,.wiki-ball:after{content:"";position:absolute;left:15%;right:15%;top:30%;height:1px;background:#7779;transform:rotate(14deg)}
+.wiki-ball:after{top:58%;transform:rotate(-8deg)}
+.wiki-ball span{font:16px/1 Georgia,serif;width:50%;color:#535353;text-shadow:1px 1px #fff;opacity:.8}
+.wiki-ball span:nth-child(3){font-size:13px}.wiki-ball span:nth-child(4){font-size:15px}.wiki-ball span:nth-child(5){font-size:12px}
+.wiki-wordmark{font:small-caps 25px/1 Georgia,'Times New Roman',serif;letter-spacing:-1px;color:#111;white-space:nowrap}
+.wiki-tagline{font:italic 10px/1.3 Georgia,serif;color:#333}
+.wiki-navbox{margin-top:11px;padding:2px 7px 6px;border:1px solid #c3c9dd;background:#f9f9f9;box-shadow:1px 1px 0 #fff;min-width:0}
+.wiki-navbox p{font-size:11px;color:#555;margin:0 0 4px;padding:0 0 4px;border-bottom:1px solid #d8d8d8;letter-spacing:.03em}
+.wiki-navbox a{display:block;font-size:11px;line-height:1.45;padding:1px 2px 1px 8px;position:relative;overflow-wrap:anywhere}
+.wiki-navbox a:before{position:absolute;content:'▪';left:0;color:#789ab6}
+.wiki-search-form{margin-top:12px;padding:3px 5px 5px;border:1px solid #c3c9dd;background:#f9f9f9}
+.wiki-search-form label{font-size:11px;display:block;margin-bottom:3px;color:#555}
+.wiki-search-form input{border:1px solid #aaa;width:100%;height:21px;font-size:11px;padding:2px}
+.wiki-search-form div{display:flex;gap:4px;margin-top:4px}
+.wiki-search-form button{background:#efefef;border:1px solid #aaa;padding:3px 5px;border-radius:2px;font-size:10px;color:#111;flex:1}
+.wiki-edition-note{font-size:10px;color:#818181;text-align:center;margin:18px 0}
+.wiki-main{flex:1;min-width:0;display:flex;flex-direction:column;align-self:stretch;padding:0 8px 8px 0}
+.wiki-personal{height:21px;min-height:21px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;color:#333;font-size:10px;gap:5px}
+.wiki-tabs{height:30px;display:flex;justify-content:space-between;align-items:stretch;padding-left:9px;gap:6px}
+.wiki-tab-left,.wiki-tab-right{display:flex;align-items:stretch;gap:2px;min-width:0}
+.wiki-tabs a{border:1px solid #a7b7d1;border-bottom:0;background:linear-gradient(#fff,#e7edf6);padding:7px 8px 5px;color:#002bb8;white-space:nowrap;font-size:11px}
+.wiki-tabs a.active{background:white;color:#111;font-weight:normal;position:relative;z-index:2;padding-top:8px}
+.wiki-tab-right{flex:none}
+.wiki-main-card{flex:1;background:#fff;border:1px solid #a7b7d1;border-radius:1px;padding:14px 20px 24px;min-width:0;min-height:430px;line-height:1.65}
+.wiki-main-card h1{font:normal 27px/1.3 Georgia,'Times New Roman',serif;margin:0 0 2px;padding-bottom:3px;border-bottom:1px solid #aaa;color:#111}
+.wiki-subtitle{font-size:11px;color:#777;margin-bottom:15px}
+.wiki-main-card p{margin:8px 0 12px}
+.wiki-intro{font-size:12px;line-height:1.65;max-width:100%}
+.wiki-infobox{width:215px;max-width:42%;float:right;margin:4px 0 12px 18px;background:#f8f9fb;border:1px solid #aaa;padding:4px;font-size:11px;line-height:1.35}
+.wiki-infobox-header{background:#ccdbea;text-align:center;font-weight:bold;padding:7px 3px;font-size:13px}
+.wiki-infobox-symbol{height:49px;display:grid;place-items:center;font:35px Georgia;color:#6785ac;background:linear-gradient(#fafcff,#e5ebf1);border-bottom:1px solid #ddd}
+.wiki-infobox-symbol .wiki-flag{color:#2866c0;font-size:38px}.wiki-puzzle{font-variant:small-caps;color:#7a7a7a}
+.wiki-info-row{display:grid;grid-template-columns:42% 58%;padding:6px 3px;border-bottom:1px solid #e1e1e1;gap:3px}
+.wiki-info-row:last-child{border-bottom:0}.wiki-info-row b{font-weight:bold}
+.wiki-toc{display:table;background:#f9f9f9;border:1px solid #aaa;padding:7px 13px 6px;clear:left;margin:18px 0 17px;font-size:11px;max-width:100%}
+.wiki-toc-title{text-align:center;font-weight:bold}.wiki-toc-title small{font-weight:normal;font-size:10px}
+.wiki-toc ol{margin:4px 0 0;padding-left:21px}.wiki-toc li{line-height:1.65}
+.wiki-section{clear:both;scroll-margin-top:8px}
+.wiki-section h2{font:normal 20px/1.25 Georgia,'Times New Roman',serif;border-bottom:1px solid #aaa;padding:2px 0 3px;margin:21px 0 7px}
+.wiki-section h2 span{color:#555}
+.wiki-section ul{padding-left:23px;margin:6px 0 12px}
+.wiki-section li{margin-bottom:6px}
+.wiki-related{border-top:1px solid #aaa;margin-top:28px;padding:10px 0 0}
+.wiki-related>b{font-size:13px}.wiki-related ul{margin:6px 0;padding-left:23px}
+.wiki-page-footer{border-top:1px solid #eee;color:#888;margin-top:18px;padding-top:6px;font-size:10px}
+.wiki-bottom-note{color:#777;font-size:10px;margin:8px 0 5px 8px}
+.wiki-sim-note{background:#f4f5f7;border:1px solid #c8ccd1;padding:12px;font-size:11px;margin:15px 0}
+.wiki-source{white-space:pre-wrap;font:12px/1.5 Consolas,monospace;background:#f5f5f5;border:1px solid #aaa;padding:10px}
+.wiki-result{margin:13px 0;border-bottom:1px solid #dedede;padding-bottom:9px}.wiki-result b{font-size:15px}.wiki-result p{color:#666;margin:4px 0}.wiki-search-count{color:#666;font-size:11px}
+@media(max-width:760px){.ie-toolbar .ie-optional{display:none}.wiki-sidebar{width:120px}.wiki-wordmark{font-size:21px}.wiki-emblem{width:105px}.wiki-ball{width:75px;height:75px}.wiki-brand{min-height:140px}.wiki-main-card{padding:11px}.wiki-tab-right{display:none}.wiki-tabs a{padding:7px 5px 4px}.wiki-infobox{width:170px}.ie-linksbar{gap:4px}}
+
+
+/* IE7 / Vista-style glossy navigation controls, modeled on the supplied reference. */
+.ie7-navigation {
+  gap: 3px;
+  height: 32px;
+  padding: 2px 5px;
+  background: linear-gradient(to bottom, #f4faff 0%, #e5f0fc 40%, #d0e1f5 100%);
+}
+.ie7-navigation > button[data-ie-action="back"],
+.ie7-navigation > button[data-ie-action="forward"] {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  overflow: visible;
+  opacity: 1;
+}
+.ie7-navigation > button[data-ie-action="back"] .ie-navball,
+.ie7-navigation > button[data-ie-action="forward"] .ie-navball {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #3b6d9e;
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #b9dffc 0%,
+    #5da4df 32%,
+    #1972bd 49%,
+    #095aab 56%,
+    #004689 84%,
+    #0d4779 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    inset 1px 0 1px rgba(255,255,255,.3),
+    inset -1px -2px 2px rgba(0,27,72,.42),
+    0 1px 1px rgba(42,68,103,.5);
+  text-shadow: none;
+  font-size: inherit;
+  line-height: normal;
+}
+.ie7-navigation > button[data-ie-action="back"] .ie-navball::before,
+.ie7-navigation > button[data-ie-action="forward"] .ie-navball::before {
+  content: "";
+  position: absolute;
+  inset: 2px 2px 47% 2px;
+  z-index: -1;
+  border-radius: 100% 100% 40% 40% / 95% 95% 30% 30%;
+  background: linear-gradient(to bottom, rgba(255,255,255,.78), rgba(255,255,255,.1));
+}
+.ie7-navigation .ie7-arrow-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  filter: drop-shadow(0 1px 0 rgba(0,37,84,.65));
+}
+.ie7-navigation > button[data-ie-action="back"]:not(:disabled):hover .ie-navball,
+.ie7-navigation > button[data-ie-action="forward"]:not(:disabled):hover .ie-navball {
+  background: linear-gradient(#d1f1ff 0%, #81c6f5 32%, #338fd6 49%, #0969b9 55%, #07529e 100%);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -2px 3px rgba(3,48,103,.45), 0 0 0 2px rgba(96,171,237,.3);
+}
+.ie7-navigation > button[data-ie-action="back"]:not(:disabled):active .ie-navball,
+.ie7-navigation > button[data-ie-action="forward"]:not(:disabled):active .ie-navball {
+  background: linear-gradient(#0b4b88, #155eaa 52%, #3a92cc);
+  box-shadow: inset 0 2px 4px rgba(0,20,60,.65);
+}
+.ie7-navigation > button[data-ie-action="back"]:disabled,
+.ie7-navigation > button[data-ie-action="forward"]:disabled {
+  opacity: 1;
+}
+.ie7-navigation > button[data-ie-action="back"]:disabled .ie-navball,
+.ie7-navigation > button[data-ie-action="forward"]:disabled .ie-navball {
+  color: #e9f0f8;
+  border-color: #8fa8be;
+  background: linear-gradient(
+    #f3f8fc 0%, #dde9f4 32%, #bed1e2 50%,
+    #a8bed3 57%, #8ba9c4 100%
+  );
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 2px rgba(65,88,118,.28), 0 1px 1px rgba(90,115,145,.25);
+}
+.ie7-navigation > button[data-ie-action="back"]:disabled .ie7-arrow-icon,
+.ie7-navigation > button[data-ie-action="forward"]:disabled .ie7-arrow-icon {
+  filter: drop-shadow(0 1px 0 rgba(100,128,154,.45));
+}
+.ie7-navigation > button[data-ie-action="forward"] {
+  margin-right: 7px;
+}
+
+
+/* Reference-matched Internet Explorer 7 navigation (2006, Aero on Windows XP). */
+.xp-window[data-window="internet"] .xp-window-content{background:#edf3fa}
+.ie7-chrome{background:linear-gradient(#d9e7f6,#e9f0f9);border-bottom:1px solid #a4b8cf}
+.ie7-navigation{
+  height:35px;min-height:35px;gap:1px;padding:3px 5px 3px 7px;
+  background:linear-gradient(to bottom,#f9fcff 0%,#e8f2fe 14%,#dbe9f9 51%,#c9dbef 100%);
+  border-bottom:1px solid #a2bdd8;box-shadow:inset 0 1px rgba(255,255,255,.95);
+}
+.ie7-navigation>button[data-ie-action="back"],
+.ie7-navigation>button[data-ie-action="forward"]{
+  width:30px;height:29px;flex:0 0 30px;position:relative;display:grid;place-items:center;padding:0;border:0;background:transparent;opacity:1;
+}
+.ie7-navigation>button[data-ie-action="forward"]{margin-right:0}
+.ie7-navigation>button[data-ie-action="back"] .ie-navball,
+.ie7-navigation>button[data-ie-action="forward"] .ie-navball{
+  position:relative;width:27px;height:27px;border-radius:50%;isolation:isolate;overflow:hidden;
+  border:1px solid #2c639e;
+  background:linear-gradient(to bottom,#d1edff 0%,#77bbed 20%,#2282ce 42%,#0d64b5 50%,#084e9e 51%,#0757a6 80%,#0d508a 100%);
+  box-shadow:inset 0 1px #f5ffff,inset 1px 0 1px #ffffffa0,inset -1px -2px 2px #103b6fbd,0 1px 2px #4d688b88;
+}
+.ie7-navigation>button[data-ie-action="back"] .ie-navball:before,
+.ie7-navigation>button[data-ie-action="forward"] .ie-navball:before{
+  position:absolute;content:"";inset:2px 3px 47% 3px;z-index:-1;border-radius:90% 90% 45% 45%;
+  background:linear-gradient(to bottom,#ffffffd6,#ffffff20);
+}
+.ie7-navigation .ie7-arrow-icon{width:16px;height:16px;fill:#fff;filter:drop-shadow(0 1px #1e5799)}
+.ie7-navigation>button[data-ie-action="forward"]:disabled{opacity:1}
+.ie7-navigation>button[data-ie-action="forward"]:disabled .ie-navball,
+.ie7-navigation>button[data-ie-action="back"]:disabled .ie-navball{
+  color:#eaf0f7;border-color:#8dabc6;
+  background:linear-gradient(to bottom,#fafcff,#dce8f3 34%,#c8d9e8 50%,#a6bfd7 52%,#8fabca 100%);
+  box-shadow:inset 0 1px #fff,inset 0 -1px 2px #7392b1,0 1px 1px #819ab26b;
+}
+.ie7-navigation>button[data-ie-action="forward"]:disabled .ie7-arrow-icon,
+.ie7-navigation>button[data-ie-action="back"]:disabled .ie7-arrow-icon{fill:#f5f9fe;filter:drop-shadow(0 1px #6a8baa)}
+.ie7-navigation>button[data-ie-action="back"]:not(:disabled):hover .ie-navball,
+.ie7-navigation>button[data-ie-action="forward"]:not(:disabled):hover .ie-navball{
+ background:linear-gradient(#e0f7ff 0%,#8fd2ff 35%,#2186d6 50%,#0458ae 51%,#0863b9 100%);
+ box-shadow:inset 0 1px #fff,inset 0 -2px 2px #07447a,0 0 0 2px #6bb1ec80;
+}
+.ie7-navigation>button[data-ie-action="back"]:not(:disabled):active .ie-navball,
+.ie7-navigation>button[data-ie-action="forward"]:not(:disabled):active .ie-navball{background:linear-gradient(#0d427f,#247fc0);box-shadow:inset 0 2px 3px #002f6b}
+.ie7-history-chevron{height:24px!important;width:13px!important;min-width:13px!important;flex:0 0 13px!important;margin:0 2px 0 -2px!important;padding:0!important;font:11px Tahoma!important;color:#3c6d9a!important;border:0!important;background:transparent!important}
+.ie7-navigation .ie-address-field{height:25px;margin-left:1px;border:1px solid #829db8;box-shadow:inset 0 1px 1px #c2d0db,0 1px #ffffff96;border-radius:2px;gap:0}
+.ie7-address-brand{height:22px;width:21px;background:#fff;border:0;color:#151515;font:20px/22px Georgia,serif}
+.ie7-address-brand.ie7-brand-ebay{color:#e53238;font-weight:bold}
+.ie7-address-brand.ie7-brand-da{color:#436c42;font-weight:bold}
+.ie7-navigation .ie-address-field input{height:23px;font:11px Tahoma,Arial,sans-serif;padding-left:2px}
+.ie7-address-drop{width:18px;background:linear-gradient(#fff,#eff4fa);border-left:0;color:#111}
+.ie7-navigation .ie7-go{display:none}
+.ie7-navigation>button[data-ie-action="refresh"],
+.ie7-navigation>button[data-ie-action="stop"]{height:25px;width:24px;flex:0 0 24px;border:1px solid #8da7c2!important;border-left:0!important;border-radius:0!important;background:linear-gradient(#fff,#dce9f6)!important;margin-left:0}
+.ie7-navigation>button[data-ie-action="refresh"]{margin-left:-1px}
+.ie7-navigation>button[data-ie-action="stop"]{margin-right:5px}
+.ie7-navigation .ie7-search{height:25px;width:200px;max-width:28%;margin-left:2px;background:linear-gradient(#fff,#f7f9fc)}
+.ie7-navigation .ie7-search input{font:italic 12px Arial,sans-serif;color:#77838b}
+.ie7-search button{width:25px;background:linear-gradient(#fff6df,#f6c66d 42%,#df9a37 100%)}
+.ie7-search-mag{border-color:#35659a;width:11px;height:11px}
+.ie7-search-mag:after{background:#35659a}
+.ie7-search-drop{color:#7d511d}
+/* IE7's historical two-row chrome: 35px address row, then one 30px shared tab / command row. */
+.ie7-tabsbar{height:32px;min-height:32px;padding:2px 3px 0;align-items:stretch;gap:0;background:linear-gradient(#edf4fb 0%,#dce8f6 55%,#e7eef8 100%);border-bottom:1px solid #a2b7d0;overflow:hidden}
+.ie7-favorites-group{display:flex;align-items:center;flex:0 0 72px;gap:2px;padding:0 3px 2px 2px;border-right:1px solid #a9bfd7}
+.ie7-favorites-group .ie7-cmd-icon{display:grid;place-items:center;width:28px;min-width:28px;height:26px;border:1px solid transparent;background:transparent;padding:0}
+.ie7-favorites-group .ie7-cmd-icon:hover{border-color:#9db4ce;background:#fff}
+.ie7-favorites-group .ie7-fav-star span{font-size:20px;color:#f7bf24;-webkit-text-stroke:.4px #b98d1d;text-shadow:0 1px #fff,1px 1px #d9a338}
+.ie7-favorites-group .ie7-fav-add span{font-size:19px;color:#40ac32;text-shadow:0 1px white,-1px -1px #347e2b}
+.ie7-tabs{align-items:flex-end;min-width:95px;flex:1;gap:2px;padding-left:2px}
+.ie7-tab{min-width:80px;max-width:290px;height:27px;padding:0 9px;background:linear-gradient(#f9fcff,#e0ebf9 50%,#d3e3f6);border:1px solid #9bb5d3;border-bottom:0;border-radius:5px 5px 0 0;box-shadow:inset 0 1px #fff;color:#284968}
+.ie7-tab.active{height:28px;background:linear-gradient(#fff,#e9f4ff);border-color:#829ebf;color:#192b42;box-shadow:inset 0 2px #fff}
+.ie7-tab-label{font:11px Tahoma,Arial,sans-serif}
+.ie7-tab-icon{width:13px;height:13px;border:1px solid #7aaad1;border-radius:2px;background:linear-gradient(#f3f9ff,#83b6e3)}
+.ie7-newtab{min-width:25px;width:25px;height:26px;margin:2px 3px 0 2px;border:1px solid #a4b7d0;background:linear-gradient(#fff,#dceafa);font-size:15px;border-radius:4px 4px 0 0}
+.ie7-commandbar{width:auto;min-width:0;flex:none;display:flex;gap:1px;align-items:center;height:29px;padding:1px 0 2px 3px;margin-left:auto;background:transparent;border:0;overflow:hidden}
+.ie7-commandbar .ie7-command-spacer{display:none}
+.ie7-commandbar button{height:26px;padding:0 4px;flex:none;color:#263c54}
+.ie7-commandbar .ie7-cmd-icon{width:25px;min-width:25px}
+.ie7-commandbar .ie7-menu-btn{gap:3px;padding:0 4px;font-size:11px}
+.ie7-commandbar .ie7-help-btn{min-width:23px;width:23px}
+@media(max-width:1100px){.ie7-commandbar .ie7-feed-btn,.ie7-commandbar .ie7-print-btn{display:none}.ie7-commandbar .ie7-menu-btn{padding:0 3px}}
+@media(max-width:790px){.ie7-commandbar .ie7-menu-btn span:nth-child(2){display:none}.ie7-commandbar .ie7-page-glyph,.ie7-commandbar .ie7-tools-glyph{display:block}.ie7-search{max-width:20%}.ie7-favorites-group{flex-basis:61px}.ie7-tabsbar{padding-left:1px}.ie7-tab{min-width:70px}}

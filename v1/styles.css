@@ -1,0 +1,246 @@
+:root {
+  font-family: var(--font-system);
+  color: var(--color-system-text-light);
+  background: #050812;
+}
+
+[hidden] { display: none !important; }
+button { color: inherit; font: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--color-focus-dark); outline-offset: 4px; }
+h1:focus { outline: none; }
+
+.boot, .profiles, .desktop { min-height: 100vh; min-height: 100dvh; }
+.boot { display: grid; place-items: center; padding: 1.5rem; background: var(--color-screen-black); }
+.boot-center {
+  display: grid;
+  justify-items: center;
+  gap: clamp(2rem, 17vh, 7rem);
+  transform: translateY(5px);
+}
+.windows-logo { position: relative; }
+.windows-logo img { display: block; width: 100%; height: auto; }
+.boot-logo { width: clamp(11rem, min(39vw, calc(8rem + 19vw)), 25rem); margin: 0; }
+.windows-logo-lettering {
+  position: absolute;
+  inset: 0;
+  /* Recolor the dark lettering while retaining the supplied flag and orange XP. */
+  clip-path: polygon(0 59%, 36% 59%, 36% 71%, 84% 71%, 84% 100%, 0 100%);
+  filter: invert(1);
+}
+.boot-track {
+  --track-width: clamp(7.75rem, 19vw, 15rem);
+  --block-size: clamp(9px, 1.4vw, 16px);
+  width: var(--track-width);
+  height: calc(var(--block-size) + 6px);
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid #b2b2b2;
+  border-radius: 4px;
+  background: var(--color-screen-black);
+}
+.boot-blocks {
+  display: flex;
+  gap: 1px;
+  width: max-content;
+  height: 100%;
+  animation: boot-progress 1.15s linear infinite;
+}
+.boot-blocks > span {
+  width: var(--block-size);
+  height: var(--block-size);
+  background: linear-gradient(#5470ce, #19398e 55%, #233c91);
+}
+@keyframes boot-progress {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(var(--track-width)); }
+}
+
+.profiles {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: clamp(3rem, 12vh, 7.5rem);
+  background: #103882;
+}
+.profile-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-content: center;
+  align-items: center;
+  padding: clamp(2rem, 8vh, 5rem) max(1.25rem, calc((100vw - 64rem) / 2));
+  background: radial-gradient(ellipse 26% 52% at 10% 23%, #98bde5, transparent 100%), #4080ca;
+}
+.profile-layout::before, .profile-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+}
+.profile-layout::before {
+  background: linear-gradient(90deg, transparent 8%, #f5faff 50%, transparent 92%);
+}
+.brand {
+  padding: 0 clamp(1rem, 3.5vw, 3rem) 1.5rem 0;
+  text-align: right;
+  text-shadow: 0 1px 2px #14487e;
+}
+.profile-brand-mark { display: inline-block; width: clamp(155px, 18vw, 248px); margin-bottom: clamp(1rem, 5vh, 2.6rem); }
+.brand h1 { margin: 0; font-size: clamp(1.05rem, 2.2vw, 1.85rem); font-weight: 400; }
+.profile-list {
+  display: grid;
+  align-content: center;
+  gap: .85rem;
+  min-height: min(59vh, 30rem);
+  padding: 1rem 0 1rem clamp(1rem, 3vw, 2.7rem);
+  border-left: 1px solid transparent;
+  border-image: linear-gradient(transparent, #e4f2ff 50%, transparent) 1;
+}
+#profile-form {
+  display: flex;
+  align-items: center;
+  gap: clamp(.65rem, 1.5vw, 1.25rem);
+  width: min(100%, 29rem);
+  min-height: clamp(68px, 13.5vh, 112px);
+  padding: .7rem clamp(.7rem, 1.5vw, 1.25rem);
+  border: 1px solid transparent;
+  border-left-color: #9fc9f1;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #1758a8, #2265b2 32%, transparent 96%);
+}
+.profile-fields { flex: 1; min-width: 0; }
+.profile-fields label { display: block; margin-bottom: .55rem; font-size: 1rem; font-weight: bold; }
+.profile-entry { display: flex; gap: .55rem; }
+.profile-entry input {
+  width: 100%;
+  min-width: 0;
+  max-width: 12.5rem;
+  min-height: 2.5rem;
+  padding: .45rem .55rem;
+  border: 1px solid #204568;
+  border-radius: 3px;
+  color: #132543;
+  background: #fff;
+  font: inherit;
+}
+.profile-entry input:focus-visible { outline: 2px solid var(--color-focus-dark); outline-offset: 2px; }
+.profile-submit {
+  flex: none;
+  width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+  border: 1px solid #d1ebc7;
+  border-radius: 4px;
+  background: linear-gradient(#6cbe4e, #227b27);
+  font: bold 1.45rem/1 Tahoma, sans-serif;
+}
+.profile-submit:hover { background: linear-gradient(#7ccd60, #298730); }
+#guest-session {
+  justify-self: start;
+  padding: .3rem .45rem;
+  border: 0;
+  background: #275a9c;
+  font-size: .85rem;
+  text-decoration: underline;
+  text-shadow: 0 1px 2px #163f72;
+}
+#guest-session:hover { background: #204d84; }
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: clamp(45px, 7vw, 78px);
+  aspect-ratio: 1;
+  border: 2px solid #b4d2f2;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #cce5f7, #6e9ac8);
+  box-shadow: inset 0 0 0 1px #2d5b8f;
+}
+.profile-avatar img { width: 75%; height: 75%; object-fit: contain; }
+#profile-form:focus-within .profile-avatar { border-color: #ffca51; }
+.profile-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: clamp(4.5rem, 12vh, 7.5rem);
+  padding: 1rem clamp(1rem, 4vw, 3.25rem);
+}
+.profile-footer::before {
+  background: linear-gradient(90deg, transparent 8%, #ff9d23 50%, transparent 92%);
+}
+.profile-footer p { margin: 0; text-align: right; font-size: .8rem; line-height: 1.4; }
+#power-off { display: inline-flex; align-items: center; gap: .6rem; border: 0; background: none; text-align: left; }
+#power-off:hover { text-decoration: underline; }
+@font-face {
+  font-family: VT323;
+  src: url('/assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.powered-off {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--color-screen-black);
+  color: #e0ebf1;
+  font-family: var(--font-console);
+  text-align: center;
+}
+.power-console { display: grid; justify-items: center; gap: 1.15rem; }
+.power-console h1 { margin: 0; font-size: clamp(1.65rem, 3.5vw, 2rem); font-weight: normal; }
+#power-on {
+  padding: .55rem .85rem;
+  border: 1px solid #c6d9e2;
+  background: #dce9ed;
+  color: #111a21;
+  font-size: 1.375rem;
+}
+#power-on:hover { background: #fff; }
+#power-on:focus-visible { outline-color: #e6f4fa; }
+
+.desktop iframe {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  border: 0;
+}
+.visually-hidden { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+
+@media (min-width: 900px) and (min-height: 650px) {
+  .brand { transform: translateY(-1.75rem); }
+  .profile-list { padding-bottom: 4.25rem; }
+}
+@media (max-height: 560px) {
+  .profile-layout { padding-block: 1rem; }
+  .profile-list { min-height: min(56vh, 30rem); }
+}
+@media (max-width: 560px) {
+  .profile-layout { grid-template-columns: 1fr; gap: 1rem; }
+  .brand { padding: 0; text-align: center; }
+  .profile-list { justify-items: center; min-height: 0; padding: 1rem 0 0; border-left: 0; border-top: 1px solid #8ab4e0; }
+  #guest-session { justify-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-blocks { animation: none; }
+}
+
+/* Persistent CRT layer above every session screen. */
+#crt-overlay{position:fixed;inset:0;z-index:999999;pointer-events:none;contain:strict}
+#crt-overlay::before,#crt-overlay::after{content:"";position:absolute;inset:0;pointer-events:none}
+#crt-overlay::before{
+  background-image:
+    repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,var(--crt-lines,0)) 3px, transparent 4px),
+    repeating-linear-gradient(90deg,rgba(255,0,0,var(--crt-rgb,0)) 0px 1px,rgba(0,160,0,var(--crt-rgb,0)) 1px 2px,rgba(0,50,255,var(--crt-rgb,0)) 2px 3px);
+}
+#crt-overlay::after{
+  background:radial-gradient(ellipse at center,transparent 54%,rgba(0,8,28,var(--crt-vignette,0)) 100%),
+             linear-gradient(118deg,rgba(255,255,255,var(--crt-shine,0)) 0%,transparent 31%);
+}
+body[data-crt-mode="light"]{--crt-lines:.065;--crt-rgb:.012;--crt-vignette:.16;--crt-shine:.025}
+:root{--crt-lines:.16;--crt-rgb:.037;--crt-vignette:.37;--crt-shine:.048}
+body:has(.boot:not([hidden]), .powered-off:not([hidden])) #crt-overlay { --crt-shine: 0; }

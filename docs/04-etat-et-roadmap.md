@@ -1,5 +1,91 @@
 # 04 — État réel, vérifications et roadmap
 
+## V1 — Socle de session
+
+Voir le [guide de reprise du projet](README.md) pour les commandes, le périmètre
+fonctionnel et les points d'entrée dans le code.
+
+### Vérification avant publication — 18 novembre 2026
+
+Les quatre icônes précédemment intégrées au HTML du bureau chargent les
+PNG identiques du kit dans `public/assets/icons/`. Le logo, Bliss et la
+police VT323 avec sa licence sont également dans `public/assets/`. Le
+serveur local sert les ressources de la V1 depuis le dépôt. Sous Edge,
+chargement de VT323, connexion par nom, CRT, ouverture de 14 vues du bureau,
+navigation dans l'Explorateur et extinction depuis Démarrer ont été vérifiés.
+Aucune requête en erreur ni exception JavaScript pendant ce parcours.
+Les trois tests du gestionnaire de fenêtres passent avec Node.js.
+
+### Mini-audit de structure — 18 novembre 2026
+
+La V1 sépare déjà les transitions de session, le serveur local et le bureau
+chargé dans une iframe. La table des transitions et la destruction de
+l'iframe lors de la sortie de session facilitent la vérification des
+parcours. Une feuille commune `v1/design-system.css` est chargée dans
+les deux documents. Elle centralise les familles typographiques, les
+couleurs de texte et de focus et le noir de fond. Chaque écran conserve
+ses variantes de présentation et la trame CRT couvre la session entière.
+
+**Corrections vérifiées sous Edge.** Ouvrir Poste de travail et Bloc-notes,
+réduire Bloc-notes puis fermer Poste de travail. Bloc-notes reste réduit
+jusqu'à sa sélection dans la barre des tâches. Fermer le Démineur pendant
+une partie arrête son chronomètre. Edge a également confirmé la
+restauration, l'agrandissement et le déplacement d'une fenêtre, ainsi que
+le déclenchement du téléchargement depuis le Bloc-notes.
+
+Le gestionnaire de fenêtres est isolé dans `v1/desktop/windows.mjs`.
+Chaque entrée du registre d'applications peut fournir `mount(win, signal)`.
+Le signal est annulé à la fermeture et permet de stopper les minuteurs et
+les écouteurs de l'application. Les styles hérités d'IE7, Wikipédia et
+Google Earth sont conservés sous `v1/desktop/apps/` pour leur intégration
+future. Ils sont exclus de la feuille du bureau. Lancer les trois tests
+de régression avec `node --test v1/desktop/windows.test.mjs`.
+
+L'[audit visuel de la V1](07-audit-visuel-v1.md) compare les quatre écrans aux
+références Windows XP. Sa vérification après correction couvre les trois
+commandes de session, le gabarit 4:3, la barre des tâches sur petit écran
+et les ajustements visuels de la connexion et du démarrage.
+
+Lancer `node v1/serve.mjs` depuis la racine, puis ouvrir
+`http://127.0.0.1:4174/`. Arrêter le serveur avec Ctrl+C.
+Le prototype de référence conserve son propre lanceur sur le port 4173.
+
+La V1 sépare le balisage, les styles et les transitions de session dans
+`v1/`. Edge a vérifié le démarrage automatique, le bouton pour passer
+l'animation, la connexion par nom et en invité, le changement de profil et
+la préférence de mouvement réduit. La connexion tient à 375 px de largeur.
+
+Le démarrage présente le logo Windows XP fourni, avec lettrage blanc sur
+fond noir et trois carrés bleus qui défilent. Edge a vérifié la boucle, le
+passage automatique et le raccourci sur la barre de chargement.
+
+La sélection de profil reprend les repères visuels des références Windows XP
+fournies, avec l'identité Rewind XP et les icônes d'époque du dépôt. Edge a
+vérifié le chargement des icônes, la sélection à 375 px, l'accès au bureau
+et le cycle d'extinction et de redémarrage simulé.
+
+Le bureau V1 reprend le moteur de fenêtres et les styles du prototype dans
+`v1/desktop/`. Les icônes sont chargées depuis le kit du dépôt. Edge a vérifié
+le menu Démarrer, le Poste de travail, la réduction et la restauration par la
+barre des tâches, l'agrandissement, la fermeture et le retour aux profils
+depuis le menu de session. Le filtre CRT couvre tous les écrans de la V1.
+Edge a vérifié que le réglage léger est appliqué depuis le bureau, conservé
+au retour aux profils et retrouvé au rechargement. Les raccourcis des
+applications éditoriales indiquent qu'elles seront ajoutées lors des prochains lots.
+
+Les prochains lots ajouteront les applications une par une, puis le parcours
+narratif et ses transitions. La gestion de session permet déjà de contrôler
+les passages entre les quatre écrans.
+
+La [référence de non-régression de la Mission 02](06-reference-non-regression.md)
+complète l'audit ci-dessous avec les essais des deux modes, les écarts de
+réinitialisation et neuf captures.
+
+Le [dossier de ressources Figma du groupe](https://www.figma.com/files/team/1695469269393141377/folder/676311494)
+contient le [Windows XP UI Kit — Community](https://www.figma.com/design/437OwcI0sVS0g8BQhXIaU4/Windows-XP-UI-Kit--Community-?node-id=2-1059).
+Accès en lecture vérifié sur la planche liée. Elle montre le bureau Bliss, le
+menu Démarrer, la barre des tâches et des exemples de fenêtres et dialogues Luna.
+
 **Date : 18/11/2026 — ce document est initialisé avant audit du dépôt.**
 
 ## Légende

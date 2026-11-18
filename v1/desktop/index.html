@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Bureau Rewind XP</title>
+  <link rel="icon" href="/assets/flag.png">
+  <link rel="stylesheet" href="/design-system.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./desktop.js"></script>
+</head>
+<body>
+  <main id="desktop" aria-label="Bureau Windows XP" tabindex="-1">
+    <div id="desktop-icons" aria-label="Icônes du Bureau"></div>
+    <div id="window-layer"></div>
+    <div id="start-menu" aria-label="Menu Démarrer" hidden></div>
+    <div id="programs-menu" hidden></div>
+    <div id="context-menu" role="menu" hidden></div>
+    <div id="dialog-layer"></div>
+    <div id="balloon" hidden></div>
+    <footer id="taskbar">
+      <button id="start-button" aria-label="Ouvrir le menu Démarrer" aria-expanded="false"><img src="/assets/flag.png" alt=""><span>démarrer</span></button>
+      <span class="taskbar-handle" aria-hidden="true"></span>
+      <div id="taskbar-items"></div>
+      <div id="system-tray">
+        <button id="tray-toggle" title="Afficher les icônes cachées" aria-label="Icônes cachées">‹</button>
+        <button id="crt-settings-button" title="Effet écran cathodique" aria-label="Régler le filtre rétro" aria-controls="crt-settings" aria-expanded="false"><img src="/desktop/icons/Display.png" alt=""></button>
+        <img id="tray-network" src="/desktop/icons/Network%20Activity%20%E2%80%94%20Both%20%E2%80%94%20Wired.png" alt="Réseau" title="Connexion au réseau local">
+        <img id="tray-volume" src="/desktop/icons/Volume.png" alt="Volume" title="Volume">
+        <button id="clock" title="Date et heure"></button>
+      </div>
+    </footer>
+  </main>
+    <aside id="crt-settings" aria-label="Réglages de l’écran rétro" hidden>
+      <div class="crt-settings-title"><span>Propriétés de l’affichage</span><button id="crt-settings-close" aria-label="Fermer les réglages">×</button></div>
+      <div class="crt-settings-body">
+        <p>Effet d’écran cathodique :</p>
+        <label class="crt-preset"><input type="radio" name="crt-mode" value="light"><strong>Rétro léger</strong></label>
+        <label class="crt-preset"><input type="radio" name="crt-mode" value="crt"><strong>CRT 2000</strong> — effet accentué</label>
+        <p class="crt-note">Scanlines, trame RGB et vignettage. Le filtre ne bloque pas les clics.</p>
+      </div>
+    </aside>
+  <div class="mobile-tip">Cette émulation est conçue pour un écran d’ordinateur. Touchez les icônes pour ouvrir les logiciels.</div>
+</body>
+</html>
