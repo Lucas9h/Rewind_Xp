@@ -1,0 +1,26 @@
+# Dépendances et caches
+node_modules/
+.npm/
+.cache/
+.vite/
+.parcel-cache/
+*.tsbuildinfo
+
+# Builds et couverture
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Configuration locale
+.env
+.env.*
+!.env.example
+
+# Journaux
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+Desktop.ini
