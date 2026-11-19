@@ -39,6 +39,15 @@ Commencer par le démarrage animé, le choix du profil et le bureau. Ajouter
 ensuite les applications une par une, puis le parcours narratif et les
 transitions. Prévoir les points de passage dès le socle de session.
 
+**19 novembre 2026 — VALIDÉ.** Rapprocher le cadre IE7 de la capture
+fournie par le responsable, avec des barres compactes, un menu Outils
+et une barre d'état avec zoom. Conserver l'accueil Rewind XP au centre
+pour ce premier lot.
+
+**19 novembre 2026 — VALIDÉ.** Pour l'article Wikipédia, prendre
+l'interface historique comme référence et intégrer les visuels et
+les expériences interactives dans le corps de l'article.
+
 ## Décisions non encore verrouillées
 
 - Architecture React / Vite vs poursuite du HTML existant : **proposition**, pas migration actée.

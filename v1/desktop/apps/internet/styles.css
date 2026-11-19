@@ -416,3 +416,225 @@
 .ie7-commandbar .ie7-help-btn{min-width:23px;width:23px}
 @media(max-width:1100px){.ie7-commandbar .ie7-feed-btn,.ie7-commandbar .ie7-print-btn{display:none}.ie7-commandbar .ie7-menu-btn{padding:0 3px}}
 @media(max-width:790px){.ie7-commandbar .ie7-menu-btn span:nth-child(2){display:none}.ie7-commandbar .ie7-page-glyph,.ie7-commandbar .ie7-tools-glyph{display:block}.ie7-search{max-width:20%}.ie7-favorites-group{flex-basis:61px}.ie7-tabsbar{padding-left:1px}.ie7-tab{min-width:70px}}
+
+.xp-window[data-window="internet"] {
+  --rewind-ie-navigation-height: 35px;
+  --rewind-ie-menu-height: 24px;
+  --rewind-ie-tabs-height: 32px;
+}
+
+.xp-window[data-window="internet"] .ie7-navigation {
+  flex: 0 0 var(--rewind-ie-navigation-height);
+}
+
+.xp-window[data-window="internet"] .ie-address-field {
+  min-width: 0;
+}
+
+.xp-window[data-window="internet"] .ie7-search {
+  flex: 0 1 190px;
+  min-width: 95px;
+  max-width: 34%;
+}
+
+.xp-window[data-window="internet"] .ie7-search input {
+  flex: 1;
+}
+
+.xp-window[data-window="internet"] :is(.ie-address-field, .ie7-search):focus-within {
+  border-color: #295f9a;
+  box-shadow: inset 0 0 0 1px #295f9a;
+}
+
+.xp-window[data-window="internet"] .ie7-search button {
+  flex: 0 0 25px;
+  background: linear-gradient(#fff, #dbe8f7);
+}
+
+.rewind-ie-menubar {
+  height: var(--rewind-ie-menu-height);
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  background: linear-gradient(#fdfefe, #e3ebf4);
+  border-block: 1px solid #fff;
+}
+
+.xp-window[data-window="internet"] .ie7-tabsbar {
+  height: var(--rewind-ie-tabs-height);
+}
+
+.rewind-ie-menubar button,
+#rewind-ie-tools button {
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #172a41;
+  font: 11px Tahoma, sans-serif;
+}
+
+.rewind-ie-menubar button:hover,
+#rewind-ie-tools button:hover,
+.ie7-commandbar button[aria-expanded="true"] {
+  border-color: #9ab5d2;
+  background: linear-gradient(#fff, #dcecf9);
+}
+
+#rewind-ie-tools {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--rewind-ie-navigation-height) + var(--rewind-ie-menu-height) + var(--rewind-ie-tabs-height));
+  right: 4px;
+  max-width: calc(100% - 8px);
+  padding: 2px;
+  border: 1px solid #8ca1b8;
+  background: #f1f2f4;
+  box-shadow: inset 0 0 0 1px #fff, 2px 3px 5px #23364d38;
+}
+
+#rewind-ie-tools button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.xp-window[data-window="internet"] .ie-statusbar {
+  background: linear-gradient(#f9fafc, #e9edf2);
+  border-top-color: #c3cbd4;
+}
+
+.rewind-ie-zoom {
+  border: 1px solid #a4b6ca;
+  background: #f6f9fd;
+  color: #24354a;
+  font: 11px Tahoma, sans-serif;
+}
+
+.xp-window[data-window="internet"] .browser-content {
+  container-type: inline-size;
+  overflow-wrap: anywhere;
+}
+
+.rewind-wiki[hidden] {
+  display: none;
+}
+
+.rewind-wiki .wiki-brand {
+  justify-content: center;
+  min-height: 145px;
+}
+
+.rewind-wiki-tabs {
+  margin-top: 20px;
+}
+
+.rewind-wiki .wiki-main-card {
+  font-size: 14px;
+}
+
+.rewind-wiki .wiki-intro {
+  font-size: inherit;
+}
+
+.rewind-wiki .wiki-section {
+  max-width: 72ch;
+}
+
+.rewind-wiki-reference {
+  font-size: 11px;
+}
+
+.rewind-wiki-focus {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border: 1px solid #c8ccd1;
+  background: #fafbfd;
+}
+
+.rewind-wiki-focus h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.rewind-wiki-figure {
+  max-width: 30em;
+  margin: 0.75em 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 12px;
+}
+
+.rewind-wiki-figure figcaption {
+  margin-top: 4px;
+}
+
+.rewind-wiki-figure summary {
+  cursor: pointer;
+  color: var(--wiki-link);
+}
+
+.rewind-wiki-diff dd {
+  margin: 0 0 6px;
+  padding: 3px 5px;
+  background: #fff;
+}
+
+.rewind-wiki-diff del { background: #f8d7a7; }
+.rewind-wiki-diff ins { background: #d3e9ff; }
+
+.rewind-wiki-player {
+  padding: 5px 8px;
+  border: 1px solid #87979e;
+  background: linear-gradient(#eaf4f7, #c7d8df);
+}
+
+.rewind-wiki-player details details,
+.rewind-wiki-track {
+  margin-inline-start: 1em;
+}
+
+.rewind-wiki-notes {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.rewind-wiki-notes span {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 34px;
+  border: 1px solid #777;
+  background: #dedede;
+  font: bold 17px Georgia, serif;
+}
+
+.rewind-wiki-notes span:nth-child(2) { width: 68px; height: 37px; background: #f3c8c1; }
+.rewind-wiki-notes span:nth-child(3) { width: 75px; height: 41px; background: #c5dfef; }
+
+@container (max-width: 500px) {
+  .rewind-wiki {
+    flex-direction: column;
+  }
+
+  .rewind-wiki .wiki-sidebar {
+    width: auto;
+    padding: 6px 8px 0;
+  }
+
+  .rewind-wiki .wiki-brand {
+    min-height: 0;
+    align-items: flex-start;
+  }
+
+  .rewind-wiki .wiki-emblem {
+    display: none;
+  }
+
+  .rewind-wiki .wiki-main {
+    padding: 0 8px 8px;
+  }
+}

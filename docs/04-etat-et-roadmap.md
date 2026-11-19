@@ -2,8 +2,52 @@
 
 ## V1 — Socle de session
 
+### Premier article Wikipédia — 19 novembre 2026
+
+Depuis l'accueil IE7, ouvrir « Années 2000 » pour accéder aux six récits
+datés et à leurs sources. Le sommaire mène aux sections et chaque
+section renvoie à sa référence. L'accueil et l'article participent à
+l'historique interne d'IE7. La recherche porte sur la page affichée.
+
+Après relance de `node v1/serve.mjs`, les cinq routes d'entrée et de
+ressources testées répondent en HTTP 200. Un contrôle Node a confirmé
+les 13 destinations internes de l'article et l'unicité de leurs
+identifiants. Les trois tests du gestionnaire de fenêtres passent.
+Le rendu et les interactions dans le navigateur restent à vérifier.
+
+L'article a ensuite reçu une infobox, des figures légendées et deux
+démonstrations dépliables. Le contrôle Node confirme que ses liens
+internes ont une destination et que ses trois icônes répondent en HTTP 200.
+Les trois tests du gestionnaire de fenêtres passent toujours.
+
+Le sommaire suit désormais les huit grandes rubriques de l'article
+francophone de Wikipédia, cité dans les références. Un contrôle Node
+confirme les huit rubriques, les six encadrés, les destinations des
+liens internes et la livraison du module par le serveur local.
+
+### Accueil IE7 — 19 novembre 2026
+
+Le raccourci Internet Explorer ouvre l'accueil local dans le gestionnaire
+de fenêtres de la V1. Les contrôles d'historique sont désactivés tant
+que l'accueil est la seule page. Après relance de `node v1/serve.mjs`,
+le bureau, le module IE7, sa feuille de style et son icône répondent en
+HTTP 200. Les trois tests du gestionnaire de fenêtres passent. La
+vérification visuelle dans Chrome reste à effectuer.
+
+Le cadre reprend les barres compactes de la référence fournie avec un
+menu Outils, une recherche dans l'accueil et un sélecteur de zoom.
+`node --check v1/desktop/apps/internet/internet.mjs` et
+`node --test v1/desktop/windows.test.mjs` passent après ces changements.
+
 Voir le [guide de reprise du projet](README.md) pour les commandes, le périmètre
 fonctionnel et les points d'entrée dans le code.
+
+### Vérification lors de la reprise — 19 novembre 2026
+
+`node --test v1/desktop/windows.test.mjs` a confirmé les trois tests du
+gestionnaire de fenêtres. Ils couvrent le maintien des fenêtres réduites,
+le retour du focus et la libération des ressources à la fermeture. La
+navigation dans le navigateur reste couverte par les audits du 18 novembre.
 
 ### Vérification avant publication — 18 novembre 2026
 

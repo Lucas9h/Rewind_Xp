@@ -1,5 +1,6 @@
 /* Windows XP — browser-based desktop emulation. No network or framework required. */
 import { createWindowManager } from './windows.mjs';
+import { mountInternetExplorer } from './apps/internet/internet.mjs';
 
 (() => {
   'use strict';
@@ -23,7 +24,7 @@ import { createWindowManager } from './windows.mjs';
     videos: {title:'Mes vidéos',icon:'My Videos',w:755,h:510, mount: renderExplorer},
     recycle: {title:'Corbeille',icon:'Recycle Bin Empty',w:690,h:475, mount: renderExplorer},
     explorer: {title:'Explorateur Windows',icon:'Windows Explorer',w:790,h:555, mount: renderExplorer},
-    internet: {title:'Internet Explorer',icon:'Internet Explorer',w:1020,h:690},
+    internet: {title:'Internet Explorer 7',icon:'Internet Explorer',w:1020,h:690,mount:mountInternetExplorer},
     earth: {title:'Google Earth',icon:'Globe',w:990,h:650},
     notepad: {title:'Sans titre - Bloc-notes',icon:'Nodepad',w:690,h:465, mount: renderNotepad},
     paint: {title:'Sans titre - Paint',icon:'Paint',w:840,h:590, mount: renderPaint},

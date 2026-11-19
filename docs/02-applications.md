@@ -20,6 +20,20 @@
 
 ## 1. Internet Explorer 7 / Wikipédia — Histoire
 
+Pour le premier lot V1, la capture fournie le 19 novembre sert de référence
+au cadre du navigateur. L'onglet Accueil présente Rewind XP. Le champ de
+recherche porte sur cette page. Le menu Outils donne accès à la recherche,
+au zoom et au retour à 100 %.
+
+La V1 propose un premier article « Années 2000 » depuis cet accueil.
+Le sommaire reprend les grandes rubriques de l’article francophone
+« Années 2000 » de Wikipédia, cité dans les références. Les six scènes
+documentées sont intégrées aux rubriques correspondantes. La recherche
+IE7 suit la page affichée.
+La présentation s'appuie sur MonoBook. Les figures légendées illustrent
+les objets et les usages. Des manipulations facultatives montrent la
+comparaison de versions et la navigation dans une discothèque numérique.
+
 ### VALIDÉ
 
 - Utiliser **Internet Explorer 7** plutôt qu'une version antérieure, pour les possibilités de navigation souhaitées.
